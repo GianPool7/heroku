@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONALES</title>
+</head>
+<body>
+
+    <form action="" class="contendioFormulario" id="claimForm" enctype="multipart/form-data">
+
+            <!-- datos de validación  -->
+            <div class="contenedorPreguntas" id="datosValidacionAbonado">
+
+                <details id="contenedorDatosValidacionAbonado">
+                    <summary>Datos de validación</summary>
+                        <div class="datosPersonales" id="formulario_personal">
+                            <div class="contenedorDatosPersonales">
+            
+                                <div class="datos">
+                                    <label for="nombrePadre">Nombre del Padre</label>
+                                    <input type="text" id="nombrePadre" placeholder="Nombre del Padre">
+                                </div>
+                        
+                                <div class="datos">
+                                    <label for="nombreMadre">Nombre del Madre</label>
+                                    <input type="text" id="nombreMadre" placeholder="Nombre de la Madre">
+                                </div>
+                        
+                                <div class="datos">
+                                    <label for="lugarNacimiento">Lugar de Nacimiento</label>
+                                    <input type="text" id="lugarNacimiento" placeholder="Lugar de Nacimiento">
+                                </div>
+                        
+                                <div class="datos">
+                                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                                    <input type="date" class="fecha" id="fechaNacimiento">
+                                </div>
+            
+                            </div>
+                        </div>
+            
+                        <div class="btnContinuar">
+                            <input type="button" id="validarFormularioAbonado" value="Validar">
+                        </div>
+            
+                </details>
+                        
+            </div>
+            
+            <div class="contenedorPreguntas" id="datosValidacionUsuario">
+                        
+                <details id="contenedorDatosValidacionUsuario">
+                    <summary>Datos de validación</summary>
+                        <div class="datosPersonales" id="formulario_personal">
+                            <div class="contenedorDatosPersonales">
+                
+                                <div class="datos">
+                                    <label for="fechaVencimiento">Fecha de Vencimiento del Recibo</label>
+                                    <input type="date" class="fecha" class="fecha" id="fechaVencimiento">
+                                </div>
+                
+                                <div class="datos">
+                                    <label for="montoTarifa">Monto del plan tarifario</label>
+                                    <input type="text" id="montoTarifa" placeholder="Monto del plan tarifario">
+                                </div>
+                
+                                <div class="datos">
+                                    <label for="direccionFacturacion">Dirección de Facturación</label>
+                                    <input type="text" id="direccionFacturacion" placeholder="Dirección">
+                                </div>
+                
+                            </div>
+                        </div>
+            
+                        <div class="btnContinuar">
+                            <input type="button" id="validarFormularioUsuario" value="Validar">
+                        </div>
+            
+                </details>
+                        
+            </div>
+
+            <details id="contenedorDatosPersonalesDetails">
+
+                <summary id="tipoUsers">Datos Personales</summary>
+                    
+                    <div class="contenedorDatosPersonales">
+            
+                        <div class="datos">
+                            <label for="name">Nombres</label>
+                            <input type="text" id="name" name="name" placeholder="Nombre del reclamante" required>
+                        </div>
+                        <div class="datos">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos del reclamante" required>
+                        </div>
+                        <div class="datos" id="extra_usuario">
+                            <label for="relacion">Especifique su relación con el cliente</label>
+                            <input type="text" id="relacion" placeholder="Madre, Padre, Hijo, etc.">
+                        </div>
+                        <div class="contenedorDatosPersonales" id="extra_representante">
+                            <div class="datos">
+                                <label for="razonsocial">Razón Social</label>
+                                <input type="text" id="razonsocial" placeholder="Razón social">
+                            </div>
+                            <div class="datos">
+                                <label for="cartaPoder">Adjuntar de Carta Poder</label>
+                                <input type="file" name="cartaPoder" id="cartaPoder" accept=".pdf, .jpg, .jpeg, .png, .doc, .docx">
+                            </div>
+                        </div>
+                        <div class="datos">
+                            <label for="numeroContacto">Número de contacto</label>
+                            <input type="text" name="numeroContacto" id="numeroContacto" placeholder="Número de contacto" max="9" required>
+                        </div>
+                        <div class="datos">
+                            <label for="tipoDoc">Tipo de Documento</label>
+                            <select name="tipoDoc" id="tipoDoc" onchange="tipoDocumento()">
+                                <option value="">Selecciona un tipo de documento</option>
+                                <option value="DNI">Documento de Identidad (DNI)</option>
+                                <option value="RUC">Registro Único de Contribuyentes (RUC)</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="CE">Carnet de Extranjería(CE)</option>
+                                <option value="Otro_Documento">Documento Legal de Identidad válido requerido por la Superintendencia Nacional de Migraciones</option>
+                            </select>
+                        </div>
+                        <div class="datos">
+                            <label for="numDoc">Número de Documento</label>
+                            <input type="text" class="" id="numDoc" placeholder="Número de identidad" max="9" required>
+                        </div>
+                        <div class="datos">
+                            <label for="distritos">Distrito</label>
+                            <select name="distritos" id="distritos" onchange="">
+                                <option value="">Seleccionar Opción</option>
+                                <option value="Ate">Ate</option>
+                                <option value="Ancón">Ancón</option>
+                                <option value="Carabayllo">Carabayllo</option>
+                                <option value="Chaclacayo">Chaclacayo</option>
+                                <option value="Comas">Comas</option>
+                                <option value="El Agustino">El Agustino</option>
+                                <option value="Ica">Ica</option>
+                                <option value="Independencia">Independencia</option>
+                                <option value="La Victoria">La Victoria</option>
+                                <option value="Los Olivos">Los Olivos</option>
+                                <option value="Puente Piedra">Puente Piedra</option>
+                                <option value="Rimac">Rimac</option>
+                                <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+                                <option value="San Martín de Porres">San Martín de Porres</option>
+                                <option value="Santa Rosa">Santa Rosa</option>
+                            </select>
+                        </div>
+                        <div class="datos">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" class="" name="datosPersonales" id="direccion" placeholder="Dirección" required>
+                        </div>
+                        <div class="datos">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="" name="datosPersonales" id="correo" placeholder="ejemplo@gmail.com" required>
+                        </div>
+                        
+                    </div>
+
+                    <div class="datos_solo" id="escojerCorreo">
+                        <p>Autoriza ser notificado por correo electrónico </p>
+                        <div class="opcionCorreo">
+                            <div class="oCorreo">
+                                <label for="autoriza">Si</label>
+                                <input type="radio" name="autorizacion" id="autorizaSi" value="True">
+                            </div>
+                            <div class="oCorreo">
+                                <label for="autoriza">No</label>
+                                <input type="radio" name="autorizacion" id="autorizaNo" value="False">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btnContinuar">
+                        <input type="button" id="validarFormularioContinuar" value="Continuar">
+                    </div>
+                    
+            </details>
+
+            <!-- para seleccionar las opciones --->
+            <div class="cajasContenedorSeleccionesMultiples" id="seleccionarApelacion">
+        
+                <details class="seleccionarOpcciones" id="seleccionUnicaApelacion">
+                    
+                        <summary>Motivo de Apelación</summary>
+                        
+                        <div class="materiaReclamableUnica">
+                            <label for="apelacionOpciones">Apelación Especifica</label>
+                            <select name="materiaReclamable" id="apelacionOpciones" onchange="apelaciones()">
+                                <option value="" selected>Seleccionar Opción</option>
+                                <option value="apelacionOne">No se analizaron pruebas presentadas por el usuario</option>
+                                <option value="apelacionTwo">La carta no motiva o sustenta la decisión de la empresa sobre el reclamo</option>
+                                <option value="apelacionThree">Empresa operadora emitió pronunciamiento por materia distinta a la reclamada</option>
+                                <option value="apelacionFour">Empresa omitió pronunciarse por un extremo del reclamo o un recibo reclamado</option>
+                                <option value="apelacionFive">La empresa operadora no acogió toda su pretensión</option>
+                                <option value="apelacionSix">Otros</option>
+                            </select>
+                        </div>
+                            
+                </details>
+                    
+            </div>
+
+            <!---las preguntas-->
+            <div class="contenedorPadre" id="datosApelacion">
+        
+                <div class="contenedorHijo">
+                    
+                    <details class="seleccionarOpcciones" id="detailsApelacionDs">
+                    
+                            <summary>Datos del Servicio</summary>
+                        
+                            <div class="columnTwo">
+                            
+                                <div class="datos">
+                                    <label for="empresaOperadoraApelacion">Empresa Operadora</label>
+                                    <select name="" id="empresaOperadoraApelacion">
+                                        <option value="">Seleccionar Opción</option>
+                                        <option value="FiberPro - PYD Telecom S.R.L">FiberPro - PYD Telecom S.R.L</option>
+                                    </select>
+                                </div>
+                            
+                                <div class="datos">
+                                    <label for="servicioMateriaApelacion">Servicio materia de apelación </label>
+                                    <select name="" id="servicioMateriaApelacion">
+                                        <option value="">Seleccionar Opción</option>
+                                        <option value="Materia de apelacion">Materia de apelacion</option>
+                                        <option value="Falta de respuesta al reclamo (aplicación de silencio administrativo positivo)">Falta de respuesta al reclamo (aplicación de silencio administrativo positivo)</option>
+                                        <option value="No se permitió la presentación de reclamo, recurso de apelación o queja o no se otorgó el código respectivo">No se permitió la presentación de reclamo, recurso de apelación o queja o no se otorgó el código respectivo</option>
+                                        <option value="Suspensión del servicio pese a reclamo en trámite">Suspensión del servicio pese a reclamo en trámite</option>
+                                        <option value="Requerimiento de pago del monto reclamado">Requerimiento de pago del monto reclamado</option>
+                                        <option value="No se permitió el pago a cuenta del monto no reclamado">No se permitió el pago a cuenta del monto no reclamado</option>
+                                        <option value="Otros defectos de tramitación">Otros defectos de tramitación</option>
+                                        <option value="Facturación y cobro">Facturación y cobro</option>
+                                        <option value="Calidad e idoneidad en la prestación del servicio">Calidad e idoneidad en la prestación del servicio</option>
+                                        <option value="Incumplimiento de condiciones contractuales ofertas y promociones">Incumplimiento de condiciones contractuales ofertas y promociones</option>
+                                        <option value="Falta de servicio">Falta de servicio</option>
+                                        <option value="Instalación activación o traslado del servicio">Instalación activación o traslado del servicio</option>
+                                        <option value="Falta de ejecución de baja o suspensión del servicio">Falta de ejecución de baja o suspensión del servicio</option>
+                                        <option value="Recargas">Recargas</option>
+                                        <option value="Contratación no solicitada">Contratación no solicitada</option>
+                                        <option value="Migración">Migración</option>
+                                        <option value="Portabilidad">Portabilidad</option>
+                                        <option value="Otras materias reclamables">Otras materias reclamables</option>
+                                        <option value="Cobros de equipos terminales incluido en el recibo por desacuerdo en el monto facturado o por reintegro del descuento de equipos terminales vinculados a la permanencia del servicio público de telecomunicaciones contratado">Cobros de equipos terminales incluido en el recibo por desacuerdo en el monto facturado o por reintegro del descuento de equipos terminales vinculados a la permanencia del servicio público de telecomunicaciones contratado</option>
+                                        <option value="otros">otros</option>
+                                    </select>
+                                </div>
+                        
+                            
+                                <div class="datos">
+                                    <label for="numeroServicioApelacion">Número del servicio reclamado o del contratado del abonado </label>
+                                    <input type="text" id="numeroServicioApelacion">
+                                </div>
+                            
+                                <div class="datos">
+                                    <label for="codigoNumeroApelacion">Código o número de reclamo </label>
+                                    <input type="text" id="codigoNumeroApelacion">
+                                </div>
+                            
+                                <div class="datos">
+                                    <label for="numeroCartaApelacion">Número de la carta que resuelve el reclamo </label>
+                                    <input type="text" id="numeroCartaApelacion">
+                                </div>
+                            
+                                <div class="datos">
+                                    <label for="fechaEmisionCartaApelacion">Fecha de emisión de la carta que resuelve el reclamo:   </label>
+                                    <input type="date" class="fecha" id="fechaEmisionCartaApelacion">
+                                </div>
+                            
+                            </div>
+                    
+                            <div class="btnContinuar">
+                                <input type="button" value="Continuar" onclick="pestañaApelacion()">
+                            </div>
+                            
+                    </details>
+                    
+                    <details class="seleccionarOpcciones" id="apelacionRespuestasSelecciones">
+                        <summary id="tituloApelacion">Detalles adicionales </summary>
+                    
+                            <div class="contenedorDatosPersonales" id="apelacionUno" >
+                    
+                                <div class="cajaRespuesta">
+                                    <label for="detallePruebaApelacionUno">Detalle de pruebas presentadas y no analizadas por la empresa operadora </label>
+                                    <input type="text" name="detallePruebaApelacionUno" id="detallePruebaApelacionUno">
+                                </div>
+                    
+                            </div>
+                        
+                            <div class="contenedorDatosPersonales" id="apelacionDos" >
+                        
+                                <div class="cajaRespuesta">
+                                    <label for="detallefsApelacionDos">Detalle la falta de sustento o motivación de la carta de la empresa </label>
+                                    <input type="text" name="detallefsApelacionDos" id="detallefsApelacionDos">
+                                </div>
+                        
+                            </div>
+                        
+                            <div class="contenedorDatosPersonales" id="apelacionTres">
+                        
+                                <div class="cajaRespuesta">
+                                    <label for="materiaEmpresaApelacionTres">Materia por la cual la empresa debió emitir pronunciamento </label>
+                                    <input type="text" name="materiaEmpresaApelacionTres" id="materiaEmpresaApelacionTres">
+                                </div>
+                        
+                            </div>
+                        
+                            <div class="contenedorDatosPersonales" id="apelacionCuatro">
+                        
+                                <div class="cajaRespuesta">
+                        
+                                    <label for="apelacionopcioncuatro">Empresa operadora omitió pronunciamiento sobre un recibo reclamado </label>
+                                    <select name="apelacionopcioncuatro" id="apelacionopcioncuatro" onchange="apelacionCuatro()">
+                                        <option value="" selected>Seleccione una Opción</option>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
+                        
+                                </div>
+                        
+                                <div class="contenedorDatosPersonales" id="apelacionCuatroSi">
+                        
+                                    <div class="columnTwo">
+                        
+                                        <div class="datos">
+                                            <label for="numeroReciboApelacionSiCuatro">Número de recibo </label>
+                                            <input type="text" name="numeroReciboApelacionSiCuatro" id="numeroReciboApelacionSiCuatro">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="fechaEmisionApelacionSiCuatro">Fecha de emisión </label>
+                                            <input type="date" class="fecha" id="fechaEmisionApelacionSiCuatro">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="fechaVencimientoApelacionSiCuatro">Fecha de vencimiento </label>
+                                            <input type="date" class="fecha" id="fechaVencimientoApelacionSiCuatro">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="montoReclamadoApelacionSiCuatro">Monto reclamado: (S/) </label>
+                                            <input type="text" name="montoReclamadoApelacionSiCuatro" id="montoReclamadoApelacionSiCuatro">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="detalleReclamoApelacionSiCuatro">Detalle del extremo del reclamo por el cual la empresa omitió pronunciamiento </label>
+                                            <input type="text" name="detalleReclamoApelacionSiCuatro" id="detalleReclamoApelacionSiCuatro">
+                                        </div>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                            </div>
+                        
+                            <div class="contenedorDatosPersonales" id="apelacionCinco">
+                        
+                                <div class="cajaRespuesta">
+                                    <label for="apelacionOpcioncinco">Falta acoger todo o parte del monto reclamado </label>
+                                    <select name="apelacionOpcioncinco" id="apelacionOpcioncinco" onchange="apelacionCinco();">
+                                        <option value="" selected>Seleccione Opción</option>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                        
+                                <div class="contenedorDatosPersonales" id="apelacionCincoSi">
+                        
+                                    <div class="columnTwo">
+                        
+                                        <div class="datos">
+                                            <label for="numeroReciboApelacionSiCinco">Número de recibo (S/)</label>
+                                            <input type="text" name="numeroReciboApelacionSiCinco" id="numeroReciboApelacionSiCinco">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="fechaEmisionApelacionSiCinco">Fecha de emisión </label>
+                                            <input type="date" class="fecha" name="fechaEmisionApelacionSiCinco" id="fechaEmisionApelacionSiCinco">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="montoTotalApelacionSiCinco">Monto total que corresponde ajustar: (S/)</label>
+                                            <input type="text" name="montoTotalApelacionSiCinco" id="montoTotalApelacionSiCinco">
+                                        </div>
+                        
+                                        <div class="datos">
+                                            <label for="detalleReclamoApelacionSiCinco">Detalle del extremo del reclamo que no fue acogido </label>
+                                            <input type="text" name="detalleReclamoApelacionSiCinco" id="detalleReclamoApelacionSiCinco">
+                                        </div>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                            </div>
+                        
+                            <div class="contenedorDatosPersonales" id="apelacionSeis">
+                        
+                                <label for="materiaEmpresaEmitirApelacionSeis">Materia por la cual la empresa debió emitir pronunciamento </label>
+                                <input type="text" name="materiaEmpresaEmitirApelacionSeis" id="materiaEmpresaEmitirApelacionSeis">
+                        
+                            </div>
+                
+                            <div class="contenedorDatosPersonales">
+                                <input type="button" value="Continuar" id="continuarFormularioApelacion">
+                            </div>
+                        
+                    </details>
+                    
+                </div>
+                    
+            </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+
+    <script>
+
+        // Función para convertir un archivo a base64
+        function convertFileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = function () {
+                    resolve(reader.result.split(',')[1]);  // Devuelve solo la parte base64
+                };
+                reader.onerror = function (error) {
+                    reject(error);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Función para enviar el formulario como JSON
+        document.getElementById("claimForm").addEventListener("submit", async function(event) {
+            event.preventDefault();  // Prevenir el envío normal del formulario
+
+            // usuarios
+            // Variables para almacenar el tipo de usuario
+            const tipoUsuarioSeleccionado = "";
+
+            
+            // datos de validacion abonado
+            const nombrePadre = document.getElementById('nombrePadre').value.trim();
+            const nombreMadre = document.getElementById('nombreMadre').value.trim();
+            const lugarNacimiento = document.getElementById('lugarNacimiento').value.trim();
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            // datos de validacion usuario
+            const fechaVencimiento = document.getElementById('fechaVencimiento').value;
+            const montoTarifa = document.getElementById('montoTarifa').value.trim();
+            const direccionFacturacion = document.getElementById('direccionFacturacion').value.trim();
+            // datos personales
+            const nombres = document.getElementById('name').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const relacion = document.getElementById('relacion').value.trim();
+            const razonSocial = document.getElementById('razonsocial').value.trim();
+            const numeroContacto = document.getElementById('numeroContacto').value.trim();
+            const tipoDoc = document.getElementById('tipoDoc').value.trim();
+            const numDoc = document.getElementById('numDoc').value.trim();
+            const distritos = document.getElementById('distritos').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+                // Obtener el valor de la autorización (True o False)
+            const autoriza = document.querySelector('input[name="autorizacion"]:checked') ? 
+                            document.querySelector('input[name="autorizacion"]:checked').value : 
+                            "False"; // Valor predeterminado si no se selecciona nada
+
+            
+            const fileInput = document.getElementById('cartaPoder');
+
+            //const documentoSolicitudX=vinculoSolicitudSX.files[0];
+            
+            const file = fileInput.files[0];  // Archivo de carta de poder
+
+            let fileBase64 = "";
+            // Solo convertimos a base64 si se selecciona un archivo
+            if (file) {
+                try {
+                    fileBase64 = await convertFileToBase64(file);
+                } catch (error) {
+                    console.error('Error al convertir archivo de carta de poder:', error);
+                }
+            }
+
+            // datos para envio de apelacion
+
+            // Variables específicas de Apelación
+            // seleccion
+            const apelacin = document.getElementById("apelacionOpciones").options[document.getElementById("apelacionOpciones").selectedIndex].text;
+            // datos del servicio
+            const empresaOperadoraApelacion = document.getElementById("empresaOperadoraApelacion").value;
+            const servicioMateriaApelacion = document.getElementById("servicioMateriaApelacion").value;
+            const numeroServicioApelacion = document.getElementById("numeroServicioApelacion").value;
+            const codigoNumeroApelacion = document.getElementById("codigoNumeroApelacion").value;
+            const numeroCartaApelacion = document.getElementById("numeroCartaApelacion").value;
+            const fechaEmisionCartaApelacion = document.getElementById("fechaEmisionCartaApelacion").value;
+            //enviar datos
+            const detallePruebaApelacionUno = document.getElementById("detallePruebaApelacionUno").value;
+            const detallefsApelacionDos = document.getElementById("detallefsApelacionDos").value;
+            const materiaEmpresaApelacionTres = document.getElementById("materiaEmpresaApelacionTres").value;
+            const apelacionopcioncuatro = document.getElementById("apelacionopcioncuatro").value;
+            const numeroReciboApelacionSiCuatro = document.getElementById("numeroReciboApelacionSiCuatro").value;
+            const fechaEmisionApelacionSiCuatro = document.getElementById("fechaEmisionApelacionSiCuatro").value;
+            const fechaVencimientoApelacionSiCuatro = document.getElementById("fechaVencimientoApelacionSiCuatro").value;
+            const montoReclamadoApelacionSiCuatro = document.getElementById("montoReclamadoApelacionSiCuatro").value;
+            // descargo del cliente
+            //const detalleReclamoApelacionSiCuatro = document.getElementById("detalleReclamoApelacionSiCuatro").value;
+            //const areaEncargadaApelacionSiCuatro = document.getElementById("areaEncargadaApelacionSiCuatro").value;
+
+
+            const data = {
+
+                // //
+                tipoUsuarioSeleccionado,
+                //tipoticket,
+                // diagnostico,
+                // datos de validacion
+                nombrePadre,
+                nombreMadre,
+                lugarNacimiento,
+                fechaNacimiento,
+                //datos de validacion
+                fechaVencimiento,
+                montoTarifa,
+                direccionFacturacion,
+
+                cartaPoder: fileBase64,  // Será una cadena vacía si no se cargó un archivo
+                nombre: nombres,
+                apellidos,
+                relacion,
+                razonSocial,
+                numeroContacto,
+                tipoDoc,
+                numDoc,
+                distritos,
+                direccion,
+                correo,
+                autoriza:autoriza,
+
+                // preguntas de apelacion
+
+                apelacin,
+                //datos extras
+                empresaOperadoraApelacion,
+                servicioMateriaApelacion,
+                numeroServicioApelacion,
+                codigoNumeroApelacion,
+                numeroCartaApelacion,
+                fechaEmisionCartaApelacion,
+                // preguntas 
+                detallePruebaApelacionUno,
+                detallefsApelacionDos,
+                materiaEmpresaApelacionTres,
+                apelacionopcioncuatro,
+                numeroReciboApelacionSiCuatro,
+                fechaEmisionApelacionSiCuatro,
+                fechaVencimientoApelacionSiCuatro,
+                //montoReclamadoApelacionSiCuatro,
+                detalleReclamoApelacionSiCuatro,
+                apelacionOpcioncinco,
+                numeroReciboApelacionSiCinco,
+                fechaEmisionApelacionSiCinco,
+                montoTotalApelacionSiCinco,
+                detalleReclamoApelacionSiCinco,
+                materiaEmpresaEmitirApelacionSeis,
+                // descargo del cliente
+                //informacionNecesariaApelacion,
+                //areaEncargadaApelacionSiCuatro,
+            };
+
+            // Enviar la solicitud POST a la API Flask
+            try {
+                const response = await fetch('https://pruebados-f80ed8a83d18.herokuapp.com/api/reclamos/apelaciones', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const responseData = await response.json();
+                const messageDiv = document.getElementById('message');
+
+                if (responseData.error) {
+                    messageDiv.innerHTML = `<span class="error">${responseData.error}</span>`;
+                } else {
+                    messageDiv.innerHTML = `<span class="success"> Número: ${responseData.ticket_id} </span>`;
+                    ocultarBotonesYRedirigir();    
+                    const btns=document.getElementById("btnEnviarFormulario");
+                    btns.style.display="none";
+                }
+            } catch (error) {
+                const messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = `<span class="error">Hubo un problema al enviar la solicitud: ${error.message}</span>`;
+            }
+
+
+        })
+        
+    </script>
+
+
+
+</body>
+</html>

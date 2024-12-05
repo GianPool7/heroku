@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    queja
+
+     # DATOS DE VERIFICACION
+    nombre_del_padre_abonado_qja = fields.Char(string='Nombre del Padre Abonado')
+    nombre_de_la_madre_abonado_qja = fields.Char(string='Nombre de la Madre Abonado')
+    lugar_de_nacimiento_abonado_qja = fields.Char(string='Lugar de Nacimiento Abonado')
+    fecha_de_nacimiento_abonado_qja = fields.Date(string='Fecha de Nacimiento Abonado')
+    fecha_vencimiento_del_recibo_usuario_qja = fields.Date(string='Fecha de Vencimiento del Recibo Usuario')
+    monto_de_tarifa_usuario_qja = fields.Float(string='Monto de Tarifa Usuario')
+
+    # DATOS PERSONALES
+    direccion_de_facturacion_usuario_qja = fields.Char(string='Dirección de Facturación Usuario')
+    tipo_de_usuario_qja = fields.Char(string='Tipo de Usuario')
+    nombre_cliente_qja = fields.Char(string='Nombre del Cliente', required=True, readonly=True)
+    apellidos_qja = fields.Char(string='Apellidos del Cliente', required=True, readonly=True)
+    relacion_familiar_qja = fields.Char(string='Relación Familiar')
+    razon_social_qja = fields.Char(string='Razón Social')
+    carta_de_poder_qja = fields.Binary(string='Carta de Poder')
+    nro_contacto_qja = fields.Char(string='Número de Contacto', required=True, readonly=True)
+    tipo_doc_qja = fields.Char(string='Tipo de Documento', required=True, readonly=True)
+    nro_documento_qja = fields.Char(string='Número de Documento', tracking=True, required=True, readonly=True)
+    distrito_cliente_qja = fields.Char(string='Distrito del Cliente', required=True, readonly=True)
+    direccion_cliente_qja = fields.Char(string='Dirección del Cliente', required=True, readonly=True)
+    correo_electronico_qja = fields.Char(string='Correo Electrónico', required=True, readonly=True)
+    notificacion_por_correo_electronico_qja = fields.Boolean(string='Notificación por Correo Electrónico', required=True, readonly=True)
+
+
+    # DATOS DE LA QUEJA
+    queja = fields.Text(string='Tipo de queja')
+    empresa_operadora_ds1 = fields.Char(string='Empresa operadora de la queja')
+    servicio_objeto_queja_dsq = fields.Char(string='Servicio relacionado con la queja')
+    nmero_servicio_reclamado_dsq = fields.Char(string='Número del servicio reclamado en la queja')
+    cdigo_nmero_reclamo_dsq = fields.Char(string='Código o número de reclamo asociado a la queja')
+    fecha_presentacin_reclamo_queja_uno = fields.Date(string='Fecha de presentación del reclamo de la queja')
+    negativa_relacionada_queja_dos = fields.Text(string='Negativa relacionada con la queja')
+    char_field_2bo_1ibhijmmb = fields.Date(string='Fecha de la negativa asociada a la queja')
+    canal_presentacin_reclamo_queja_dos = fields.Char(string='Canal de presentación de la queja')
+    canal_especificado_queja_dos = fields.Char(string='Canal especificado para la queja')
+    vinculo_del_documento = fields.Binary(string='Vinculo al documento probatorio de la negativa')
+    fecha_en_la_cual_se_habra_suspendido_el_servicio = fields.Date(string='Fecha en la que se suspendió el servicio de la queja')
+    medio_de_cobranza_queja_cuatro = fields.Char(string='Medio de cobranza relacionado con la queja')
+    se_adjunta_documento_queja_cuatro = fields.Binary(string='Documento adjunto relacionado con el cobro de la queja')
+    documento_queja = fields.Binary(string='Documento que respalda la queja')
+    lugar_donde_permiti_pago_cinco = fields.Char(string='Lugar donde se permitió el pago relacionado con la queja')
+    especificar_quejas = fields.Text(string='Especificar detalles adicionales sobre la queja')
+    adjunta_prueba_cinco = fields.Binary(string='Prueba adjunta relacionada con la queja')
+    medios_probatorios_1 = fields.Binary(string='Medios probatorios adicionales de la queja')
+    adjunta_medios_probatorios_x_seis = fields.Binary(string='Documentos adicionales relacionados con la queja')
+    medio_probatorios_queja_ultimo = fields.Binary(string='Último medio probatorio relacionado con la queja')
+    medios_probatorios = fields.Binary(string='Medios probatorios relacionados con la queja')
+
+    informacion_necesaria_queja = fields.Text(string='Información necesaria para el reclamo de la queja')
+    descripcion_problema_queja = fields.Text(string='Descripción del problema relacionado con la queja')
+
+
+</body>
+</html>
